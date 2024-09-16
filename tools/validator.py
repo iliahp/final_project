@@ -24,6 +24,7 @@ class Validator:
         else:
             raise ValueError(message)
 
+    @classmethod
     def national_id_validator(cls, national_id, message):
         if isinstance(national_id, str) and re.match(r"^[0-9]{10}$", national_id):
             return national_id
@@ -32,22 +33,21 @@ class Validator:
 #birthdate
 #todo
 
+    @classmethod
     def phone_number_validator(cls, phone_number, message):
         if isinstance(phone_number, str) and re.match(r"^[0-9]{11}$", phone_number):
             return phone_number
         else:
             raise ValueError(message)
 
-
-
+    @classmethod
     def salary_validator(cls, salary, message):
         if isinstance(salary, str) and re.match(r"^[0-9]{2-14}$", salary):
             return salary
         else:
             raise ValueError(message)
 
-
-
+    @classmethod
     def score_validator(cls, score, message):
         if isinstance(score, str) and re.match(r"^[0-20]{2}$", score):
             return score

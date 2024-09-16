@@ -33,13 +33,13 @@ class Course:
         return self._title
 
     @title.setter
-    def title(self, name):
-        self._name = Validator.name_validator(name, "invalid title ")
+    def title(self, title):
+        self._title = Validator.name_validator(title, "invalid title ")
 
     @property
     def department(self):
         return self._department
 
     @department.setter
-    def department(self, name):
-        self._name = Validator.name_validator(name, "invalid departmnt ")
+    def department(self, department):
+        self._department = Validator.name_validator(department, "invalid department ")

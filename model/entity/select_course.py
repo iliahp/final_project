@@ -23,7 +23,7 @@ class Selectcourse:
     def course(self):
         return self.course
 
-    @Course.setter
+    @course.setter
     def course(self, value):
         self._course = value
 
@@ -31,6 +31,7 @@ class Selectcourse:
     def teacher(self):
         return self.teacher.setter
 
+    @teacher.setter
     def teacher(self, name):
         self._name = Validator.name_validator(name, "invalid name ")
 
@@ -38,6 +39,7 @@ class Selectcourse:
     def score(self):
         return self.score.setter
 
+    @score.setter
     def score(self, score):
         self._score = Validator.score_validator(score, "invalid score ")
 
@@ -45,5 +47,6 @@ class Selectcourse:
     def date_time(self):
         return self.date_time.setter
 
+    @date_time.setter
     def date_time(self, value):
         self._date_time = value
