@@ -1,9 +1,7 @@
-from school.models import person
+from model.entity.person import Person
 
-
-#todo
-
-class teacher(person):
+# skill
+class Teacher(Person):
     def __init__(self, id, name, family, salary, study):
         self.id = id
         self.name = name
@@ -13,19 +11,17 @@ class teacher(person):
 
     @property
     def salary(self):
-        return self.__salary
+        return self._salary
 
     @salary.setter
     def salary(self, value):
-        self.__salary = value
+        self._salary = value
 
     @property
     def study(self):
-        return self.__study
+        return self._study
 
     @study.setter
     def study(self, value):
-        self.__study = value
+        self._study = value
 
-    def __str__(self):
-        return f"{self.__dict__}"

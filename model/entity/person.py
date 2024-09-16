@@ -1,20 +1,14 @@
 import re
 
-
-class Student:
-    def __init__(self, id, name, family, national_id):
+# id, name, family, birth_date, national_id, phone_number
+class Person:
+    def __init__(self, id, name, family):
         self.id = id
-        self._name = name
+        self.name = name
         self.family = family
-        self.national_id = national_id
 
-    @property
-    def id(self):
-        return self._id
-
-    @id.setter
-    def id(self, value):
-        self._id = value
+    def __str__(self):
+        return f"{self.__dict__}"
 
     @property
     def name(self):
@@ -39,12 +33,9 @@ class Student:
             self._family = None
 
     @property
-    def national_id(self):
-        return self._national_id
+    def id(self):
+        return self._id
 
-    @national_id.setter
-    def national_id(self, value):
-        self._national_id = value
-
-    def __str__(self):
-        return f"{self.__dict__}"
+    @id.setter
+    def id(self, value):
+        self._id = value
