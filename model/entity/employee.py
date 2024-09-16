@@ -1,4 +1,6 @@
 from model.entity.person import Person
+import re
+from tools.validator import Validator
 
 
 # salary
@@ -10,9 +12,9 @@ class Employee(Person):
         self.salary = salary
 
     @property
-    def salary(self):
-        return self._salary
+    def name(self):
+           return self._name
 
-    @salary.setter
-    def salary(self, value):
-        self._salary = value
+    @name.setter
+    def name(self, name):
+        self._name = Validator.name_validator(name , "invalid name ")

@@ -1,8 +1,11 @@
 import re
 
+from tools.validator import Validator
+
+
 # id, name, family, birth_date, national_id, phone_number
 class Person:
-    def __init__(self, id, name, family):
+    def __init__(self, id, name, family, birthday, phone_number):
         self.id = id
         self.name = name
         self.family = family
@@ -15,22 +18,16 @@ class Person:
         return self._name
 
     @name.setter
-    def name(self, value):
-        if re.match(r"^[a-zA-Z\s]{2,20}$", value):
-            self._name = value
-        else:
-            self._name = None
+    def name(self, name):
+        self._name = Validator.name_validator(name, "invalid name ")
 
     @property
     def family(self):
         return self._family
 
     @family.setter
-    def family(self, value):
-        if re.match(r"^[a-zA-Z\s]{2,20}$", value):
-            self._family = value
-        else:
-            self._family = None
+    def family(self, family):
+        self._family = Validator.family_validator(family, "invalid family ")
 
     @property
     def id(self):
@@ -39,3 +36,19 @@ class Person:
     @id.setter
     def id(self, value):
         self._id = value
+
+    @property
+    def birthday(self):
+        return self._birthday
+
+    @birthday.setter
+    def birthday(self, value):
+        self._birthday = value
+
+    @property
+    def phone_number(self):
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        self._phone_number = Validator.phone_number_validator(phone_number, "invalid phone_number ")
